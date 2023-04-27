@@ -61,7 +61,7 @@ def config_to_dict(config):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default=None, help='The config file provided by the trained model')
-    parser.add_argument('--volume_path', type=str, default='/data/LarryXu/Synapse/preprocessed_data/test_vol_h5/')
+    parser.add_argument('--volume_path', type=str, default='testset/test_vol_h5/')
     parser.add_argument('--dataset', type=str, default='Synapse', help='Experiment name')
     parser.add_argument('--num_classes', type=int, default=8)
     parser.add_argument('--list_dir', type=str, default='./lists/lists_Synapse/', help='list_dir')
@@ -72,9 +72,9 @@ if __name__ == '__main__':
                         default=1234, help='random seed')
     parser.add_argument('--is_savenii', action='store_true', help='Whether to save results during inference')
     parser.add_argument('--deterministic', type=int, default=1, help='whether use deterministic training')
-    parser.add_argument('--ckpt', type=str, default='/data/LarryXu/Synapse/sam_vit_b_01ec64.pth',
+    parser.add_argument('--ckpt', type=str, default='checkpoints/sam_vit_b_01ec64.pth',
                         help='Pretrained checkpoint')
-    parser.add_argument('--lora_ckpt', type=str, required=True, help='The checkpoint from LoRA')
+    parser.add_argument('--lora_ckpt', type=str, default='checkpoints/epoch_159.pth', help='The checkpoint from LoRA')
     parser.add_argument('--vit_name', type=str, default='vit_b', help='Select one vit model')
     parser.add_argument('--rank', type=int, default=4, help='Rank for LoRA adaptation')
     parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
