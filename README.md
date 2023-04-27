@@ -1,3 +1,4 @@
 # SAMed
-The implementation of the technical report: "Customized Segment Anything Model for
-Medical Image Segmentation". More details will be added later.
+This repository contains the implementation of the following paper:
+> **Customized Segment Anything Model for Medical Image Segmentation**<br>
+> [Kaidong Zhang](https://hitachinsk.github.io/), and [Dong Liu](https://faculty.ustc.edu.cn/dongeliu/)<br>
