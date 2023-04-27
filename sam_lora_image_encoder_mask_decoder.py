@@ -1,6 +1,3 @@
-# Sheng Wang at Apr 6 2023
-# What a time to be alive (first half of 2023)
-
 from segment_anything import build_sam, SamPredictor
 from segment_anything import sam_model_registry
 
