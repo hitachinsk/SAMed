@@ -33,3 +33,34 @@ pip install -r requirements.txt
 ```
 
 ## Quick start
+1. Change the directory to the rootdir of this repository.
+2. Please download the pretrained [SAM model](https://drive.google.com/file/d/1_oCdoEEu3mNhRfFxeWyRerOKt8OEUvcg/view?usp=share_link) (provided by the original repository of SAM) and the [LoRA checkpoint of SAMed](https://drive.google.com/file/d/1P0Bm-05l-rfeghbrT1B62v5eN-3A-uOr/view?usp=share_link). Put them in the `./checkpoints` folder.
+3. Please download the [testset](https://drive.google.com/file/d/1RczbNSB37OzPseKJZ1tDxa5OO1IIICzK/view?usp=share_link) and put it in the ./testset folder. Then, unzip and deete this file.
+4. Run this commend to test the performance of SAMed.
+```bash
+python test.py --is_savenii --output_dir <Your output directory>
+```
+If everything works, you can find the average DSC is 0.8188 (81.88) and HD is 20.64, which correspond to the Tab.1 of the paper. And check the test results in `<Your output directory>`.
+
+## Training
+We use 2 RTX 3090 GPUs for training.
+1. Please download the processed [training set](https://drive.google.com/file/d/1zuOQRyfo0QYgjcU_uZs0X3LdCnAC2m3G/view?usp=share_link), whose resolution is `224x224`, and put it in <Your folder>. Then, unzip and delete this file. We also prepare the [training set](https://drive.google.com/file/d/1F42WMa80UpH98Pw95oAzYDmxAAO2ApYg/view?usp=share_link) with resolution `512x512` for reference, the `224x224` version of training set is downsampled from the `512x512` version.
+2. Run this command to train SAMed.
+```bash
+python train.py --root_path <Your folder> --output <Your output path> --warmup --AdamW 
+```
+Check the results in `<Your output path>`.
+
+## License
+This work is licensed under MIT license. See the [LICENSE](LICENSE) for details.
+
+## Citation
+If our work inspires your research or some part of the codes are useful for your work, please cite our paper:
+
+
+## Contact
+If you have any questions, please contact us via 
+- richu@mail.ustc.edu.cn
+
+## Acknowledgement
+We appreciate the development of [Segment Anything Model](https://github.com/facebookresearch/segment-anything) and the provider of the [Synapse multi-organ segmentation dataset](https://www.synapse.org/#!Synapse:syn3193805/wiki/217789).
