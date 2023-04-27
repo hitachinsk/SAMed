@@ -63,6 +63,7 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
     writer = SummaryWriter(snapshot_path + '/log')
     iter_num = 0
     max_epoch = args.max_epochs
+    stop_epoch = args.stop_epoch
     max_iterations = args.max_epochs * len(trainloader)  # max_epoch = max_iterations // len(trainloader) + 1
     logging.info("{} iterations per epoch. {} max iterations ".format(len(trainloader), max_iterations))
     best_performance = 0.0
@@ -120,7 +121,7 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
                 model.module.save_lora_parameters(save_mode_path)
             logging.info("save model to {}".format(save_mode_path))
 
-        if epoch_num >= max_epoch - 1:
+        if epoch_num >= max_epoch - 1 or epoch_num >= stop_epoch - 1:
             save_mode_path = os.path.join(snapshot_path, 'epoch_' + str(epoch_num) + '.pth')
             try:
                 model.save_lora_parameters(save_mode_path)
