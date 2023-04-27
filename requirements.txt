@@ -19,4 +19,3 @@ ml-collections==0.1.1
 pycocotools==2.0.6
 onnx==1.13.1
 onnxruntime==1.14.1
-safetensors==0.3.1
