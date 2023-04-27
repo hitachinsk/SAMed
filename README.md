@@ -74,4 +74,4 @@ If you have any questions, please contact us via
 - richu@mail.ustc.edu.cn
 
 ## Acknowledgement
-We appreciate the developers of [Segment Anything Model](https://github.com/facebookresearch/segment-anything) and the provider of the [Synapse multi-organ segmentation dataset](https://www.synapse.org/#!Synapse:syn3193805/wiki/217789). We also appreciate the author of [SAM LoRA open source codes](https://github.com/JamesQFreeman/Sam_LoRA). The code of SAMed is built upon [TransUnet](https://github.com/Beckschen/TransUNet), we express our gratitude to this awesome project.
+We appreciate the developers of [Segment Anything Model](https://github.com/facebookresearch/segment-anything) and the provider of the [Synapse multi-organ segmentation dataset](https://www.synapse.org/#!Synapse:syn3193805/wiki/217789). The code of SAMed is built upon [TransUnet](https://github.com/Beckschen/TransUNet) and [SAM LoRA](https://github.com/JamesQFreeman/Sam_LoRA), and we express our gratitude to these awesome projects.
