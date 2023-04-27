@@ -61,6 +61,13 @@ This work is licensed under MIT license. See the [LICENSE](LICENSE) for details.
 
 ## Citation
 If our work inspires your research or some part of the codes are useful for your work, please cite our paper:
+```bibtex
+@article{samed,
+  title={Customized Segment Anything Model for Medical Image Segmentation},
+  author={Kaidong Zhang, and Dong Liu},
+  year={2023}
+}
+```
 
 ## Contact
 If you have any questions, please contact us via 
