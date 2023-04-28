@@ -4,6 +4,9 @@ This repository contains the implementation of the following paper:
 > [Kaidong Zhang](https://hitachinsk.github.io/), and [Dong Liu](https://faculty.ustc.edu.cn/dongeliu/)<br>
 > Technical report<br>
 [\[Paper\]](https://arxiv.org/pdf/2304.13785.pdf)
+
+Colab online demo: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KCS5ulpZasYl9DgJJn59WsGEB8vwSI_m?usp=sharing)
+
 <img src="materials/teaser.png" height="140px"/> 
 
 ## Overview
@@ -35,6 +38,8 @@ pip install -r requirements.txt
 If you have the raw Synapse dataset, we provide the [preprocess script](preprocess/) to process and normalize the data for training. Please refer this folder for more details.
 
 ## Quick start
+We strongly recommand you to try our online demo [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KCS5ulpZasYl9DgJJn59WsGEB8vwSI_m?usp=sharing).
+
 Currently, we provide the SAMed and the SAMed_s models for reproducing our results quickly. The LoRA checkpoints and their corresponding configurations are shown in the table below.
 Model | Checkpoint | Configuration | DSC | HD
 ------------ | -------------|-----------|---------------|-------------
