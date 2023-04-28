@@ -3,6 +3,7 @@ This repository contains the implementation of the following paper:
 > **Customized Segment Anything Model for Medical Image Segmentation**<br>
 > [Kaidong Zhang](https://hitachinsk.github.io/), and [Dong Liu](https://faculty.ustc.edu.cn/dongeliu/)<br>
 > Technical report<br>
+[\[Paper\]](https://arxiv.org/pdf/2304.13785.pdf)
 <img src="materials/teaser.png" height="140px"/> 
 
 ## Overview
