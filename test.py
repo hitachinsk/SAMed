@@ -111,16 +111,11 @@ if __name__ == '__main__':
         os.makedirs(args.output_dir)
 
     # register model
-    if not args.rescale:  # input data is [0-1]
-        sam, img_embedding_size = sam_model_registry[args.vit_name](image_size=args.img_size,
+    sam, img_embedding_size = sam_model_registry[args.vit_name](image_size=args.img_size,
                                                                     num_classes=args.num_classes,
                                                                     checkpoint=args.ckpt, pixel_mean=[0, 0, 0],
                                                                     pixel_std=[1, 1, 1])
-    else:  # input data is [0-255]
-        sam, img_embedding_size = sam_model_registry[args.vit_name](image_size=args.img_size,
-                                                                    num_classes=args.num_classes,
-                                                                    checkpoint=args.ckpt)
-
+    
     pkg = import_module(args.module)
     net = pkg.LoRA_Sam(sam, args.rank).cuda()
 
