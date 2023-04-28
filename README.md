@@ -37,7 +37,7 @@ If you have the raw Synapse dataset, we provide the [preprocess script](preproce
 ## Quick start
 1. Change the directory to the rootdir of this repository.
 2. Please download the pretrained [SAM model](https://drive.google.com/file/d/1_oCdoEEu3mNhRfFxeWyRerOKt8OEUvcg/view?usp=share_link) (provided by the original repository of SAM) and the [LoRA checkpoint of SAMed](https://drive.google.com/file/d/1P0Bm-05l-rfeghbrT1B62v5eN-3A-uOr/view?usp=share_link). Put them in the `./checkpoints` folder.
-3. Please download the [testset](https://drive.google.com/file/d/1RczbNSB37OzPseKJZ1tDxa5OO1IIICzK/view?usp=share_link) and put it in the ./testset folder. Then, unzip and deete this file.
+3. Please download the [testset](https://drive.google.com/file/d/1RczbNSB37OzPseKJZ1tDxa5OO1IIICzK/view?usp=share_link) and put it in the ./testset folder. Then, unzip and delete this file.
 4. Run this commend to test the performance of SAMed.
 ```bash
 python test.py --is_savenii --output_dir <Your output directory>
@@ -48,6 +48,7 @@ What's more, we also provide the [SAMed_s model](https://drive.google.com/file/d
 ```bash
 python test.py --is_savenii --output_dir <Your output directory> --lora_ckpt checkpoints_s/epoch_159.pth --module sam_lora_image_encoder_mask_decoder
 ```
+The average DSC is 0.7778 (77.78) and HD is 31.72 for SAMed_s, which corresponds to the Tab.3 of the paper. 
 
 ## Training
 We use 2 RTX 3090 GPUs for training.
