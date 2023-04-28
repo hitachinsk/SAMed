@@ -20,6 +20,7 @@ We propose SAMed, a general solution for medical image segmentation. Different f
 - Anaconda
 - Python 3.7.11
 - Pytorch 1.9.1
+
 To get started, first please clone the repo
 ```
 git clone https://github.com/hitachinsk/SAMed.git
