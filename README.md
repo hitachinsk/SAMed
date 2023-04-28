@@ -65,6 +65,7 @@ If our work inspires your research or some part of the codes are useful for your
 @article{samed,
   title={Customized Segment Anything Model for Medical Image Segmentation},
   author={Kaidong Zhang, and Dong Liu},
+  journal={arXiv preprint arXiv:2304.13785},
   year={2023}
 }
 ```
