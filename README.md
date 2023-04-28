@@ -35,6 +35,14 @@ pip install -r requirements.txt
 If you have the raw Synapse dataset, we provide the [preprocess script](preprocess/) to process and normalize the data for training. Please refer this folder for more details.
 
 ## Quick start
+Currently, we provide the SAMed and the SAMed_s models for reproducing our results quickly. The LoRA checkpoints and their corresponding configurations are shown in the table below.
+Model | Checkpoint | Configuration | DSC | HD
+------------ | -------------|-----------|---------------|-------------
+SAMed | [Link](https://drive.google.com/file/d/1P0Bm-05l-rfeghbrT1B62v5eN-3A-uOr/view?usp=share_link) | [Cfg](https://drive.google.com/file/d/1pTXpymz3H6665hjztkv-A7uG_rzSWPVg/view?usp=sharing) | 81.88 | 20.64
+SAMed_s | [Link](https://drive.google.com/file/d/1rQM2md-h66RlRF3wC0m9N8aheOCvKfYv/view?usp=share_link) | [Cfg](https://drive.google.com/file/d/1x72rB-oNtZ-ZoD_yfOnWdowSb02FMUjT/view?usp=sharing) | 77.78 | 31.72
+
+Here are the instructions: 
+
 1. Change the directory to the rootdir of this repository.
 2. Please download the pretrained [SAM model](https://drive.google.com/file/d/1_oCdoEEu3mNhRfFxeWyRerOKt8OEUvcg/view?usp=share_link) (provided by the original repository of SAM) and the [LoRA checkpoint of SAMed](https://drive.google.com/file/d/1P0Bm-05l-rfeghbrT1B62v5eN-3A-uOr/view?usp=share_link). Put them in the `./checkpoints` folder.
 3. Please download the [testset](https://drive.google.com/file/d/1RczbNSB37OzPseKJZ1tDxa5OO1IIICzK/view?usp=share_link) and put it in the ./testset folder. Then, unzip and delete this file.
