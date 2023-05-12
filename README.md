@@ -17,7 +17,7 @@ Model | DSC | HD | Aorta | Gallbladder | Kidney (L) | Kidney (R) | Liver | Pancr
 SAMed | 81.88 | 20.64 | 87.77 | 69.11 | 80.45 | 79.95 | 94.80 | **72.17** | 88.72 | 82.06
 SAMed_h | **84.30** | **16.02** | **87.81** | **74.72** | **85.76** | **81.52** | **95.76** | 70.63 | **90.46** | **87.77**
 
-Without bells and whistles, SAMed_h achieves **much higher performance** than SAMed. Although the model size of `vit_h` version is much larger (above 2G) than `vit_b` version (~350M), the LoRA checkpoint of SAMed_h does not increase a lot (from 18M to 21M). Therefore, **the deployment and storage cost of SAMed_h is nearly on par with SAMed**. Since industry prefers to deploy larger and better performing models, we believe SAMed_h is more promising for computer-assisted diagnosis and preoperative planning in practice. For more details about SAMed_h, please visit this directory.
+Without bells and whistles, SAMed_h achieves **much higher performance** than SAMed. Although the model size of `vit_h` version is much larger (above 2G) than `vit_b` version (~350M), the LoRA checkpoint of SAMed_h does not increase a lot (from 18M to 21M). Therefore, **the deployment and storage cost of SAMed_h is nearly on par with SAMed**. Since industry prefers to deploy larger and better performing models, we believe SAMed_h is more promising for computer-assisted diagnosis and preoperative planning in practice. For more details about SAMed_h, please visit [SAMed_h directory](SAMed_h/).
 
 ## Overview
 <img src="materials/pipeline.png" height="260px"/> 
