@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ## Quick start
-All the steps are the same as [SAMed](https://github.com/hitachinsk/SAMed). But you need to prepare the vit_h version of SAM and our pretrained checkpoint.
+All the steps are the same as [SAMed](https://github.com/hitachinsk/SAMed). But you need to prepare the [vit_h version of SAM](https://github.com/facebookresearch/segment-anything#model-checkpoints) and [our pretrained checkpoint](https://drive.google.com/file/d/1Kx_vx9bcxJaiMYWAgljNtwtHcooUsq8m/view?usp=sharing).
 
 ## Training
 We adopt one A100 (80G) for training.
