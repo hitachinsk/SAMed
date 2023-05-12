@@ -55,8 +55,6 @@ parser.add_argument('--module', type=str, default='sam_lora_image_encoder')
 parser.add_argument('--dice_param', type=float, default=0.8)
 
 parser.add_argument('--lr_exp', type=float, default=0.9, help='The learning rate decay expotential')
-parser.add_argument('--skip_hard', action='store_true', help='Skip the hard examples that may cause the model fluctuate')
-parser.add_argument('--vis_grad', action='store_true', help='Visualize the gradient number')
 
 # acceleration choices
 parser.add_argument('--tf32', action='store_true', help='If activated, use tf32 to accelerate the training process')
