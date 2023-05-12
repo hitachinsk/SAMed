@@ -9,6 +9,16 @@ Colab online demo: [![Open In Colab](https://colab.research.google.com/assets/co
 
 <img src="materials/teaser.png" height="140px"/> 
 
+## :star: News
+- Thanks to the high investment from my supevisor, I can finetune the `vit_h` version of SAM for more accurate medical image segmentation. Now, we release the `vit_h` version of SAMed (We denote this version as SAMed_h), and the comparison between SAMed and SAMed_h is shown in the table below.
+
+Model | DSC | HD | Aorta | Gallbladder | Kidney (L) | Kidney (R) | Liver | Pancreas | Spleen | Stomach
+------------ | -------------|-----------|---------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------
+SAMed | 81.88 | 20.64 | 87.77 | 69.11 | 80.45 | 79.95 | 94.80 | **72.17** | 88.72 | 82.06
+SAMed_h | **84.30** | **16.02** | **87.81** | **74.72** | **85.76** | **81.52** | **95.76** | 70.63 | **90.46** | **87.77**
+
+Without bells and whistles, `SAMed_h` achieves **much higher performance** than `SAMed`. Although the model size of `vit_h` version is much larger (above 2G) than `vit_b` version (~350M), the LoRA checkpoint of `SAMed_h` does not increase a lot (from 18M to 21M). Therefore, **the deployment and storage cost of `SAMed_h` is nearly on par with `SAMed`**. Since industry prefers to deploy larger and better performing models, we believe `SAMed_h` is more promising for computer-assisted diagnosis and preoperative planning in practice. For more details about `SAMed_h`, please visit this directory.
+
 ## Overview
 <img src="materials/pipeline.png" height="260px"/> 
 We propose SAMed, a general solution for medical image segmentation. Different from the previous methods, SAMed is built upon the large-scale image segmentation model, Segment Anything Model (SAM), to explore the new research paradigm of customizing large-scale models for medical image segmentation. SAMed applies the low-rank-based (LoRA) finetuning strategy to the SAM image encoder and finetunes it together with the prompt encoder and the mask decoder on labeled medical image segmentation datasets. We also observe the warmup finetuning strategy and the AdamW optimizer lead SAMed to successful convergence and lower loss. Different from SAM, SAMed could perform semantic segmentation on medical images. Our trained SAMed model achieves 81.88 DSC and 20.64 HD on the Synapse multi-organ segmentation dataset, which is on par with the state-of-the-art methods. We conduct extensive experiments to validate the effectiveness of our design. Since SAMed only updates a small fraction of the SAM parameters, its deployment cost and storage cost are quite marginal in practical usage.
@@ -16,7 +26,7 @@ We propose SAMed, a general solution for medical image segmentation. Different f
 ## Todo list
 - [ ] Make a demo.
 - [ ] Finetune on more datasets
-- [ ] Make SAMed based on `vit_l` or `vit_h` mode of SAM
+- [ ] ~~Make SAMed based on `vit_l` or `vit_h` mode of SAM~~
 
 ## Prerequisites
 - Linux (We tested our codes on Ubuntu 18.04)
