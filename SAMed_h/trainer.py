@@ -83,17 +83,6 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
                     outputs = model(image_batch, multimask_output, args.img_size)
                     loss, loss_ce, loss_dice = calc_loss(outputs, low_res_label_batch, ce_loss, dice_loss, args.dice_param)
                 scaler.scale(loss).backward()
-                if args.vis_grad and loss.item() > 0.4 and iter_num > 3 * args.warmup_period:
-                    for name, params in model.named_parameters():
-                        if params.requires_grad:
-                            print(f'name: {name}, grad max: {torch.max(params)}')
-                    raise ValueError('kkpsa')
-                if args.skip_hard and iter_num > 3 * args.warmup_period and loss.item() > 0.4:
-                    skip_hard_nums += 1
-                    print(f'Skip hard nums: {skip_hard_nums}')
-                    optimizer.zero_grad()
-                    continue
-                # scaler.scale(loss).backward()
                 scaler.step(optimizer)
                 scaler.update()
                 optimizer.zero_grad()
@@ -117,7 +106,6 @@ def trainer_synapse(args, model, snapshot_path, multimask_output, low_res):
                     assert shift_iter >= 0, f'Shift iter is {shift_iter}, smaller than zero'
                 else:
                     shift_iter = iter_num
-                # lr_ = base_lr * (1.0 - shift_iter / max_iterations) ** 0.9  # learning rate adjustment depends on the max iterations
                 lr_ = base_lr * (1.0 - shift_iter / max_iterations) ** args.lr_exp
                 for param_group in optimizer.param_groups:
                     param_group['lr'] = lr_
